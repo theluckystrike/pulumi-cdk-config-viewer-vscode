@@ -6,8 +6,7 @@ Inspect `Pulumi.yaml`, `Pulumi.<stack>.yaml`, `cdk.json`, `cdk.context.json` and
 
 ## What it opens
 
-- `Pulumi.yaml` and `Pulumi.yml` project manifests (runtime, backend, plugins, outputs and stack references).
-- `Pulumi.<stack>.yaml` and `Pulumi.<stack>.yml` stack configurations (`encryptionsalt`, `secretsprovider`, `config:` namespaces and `secure:` values).
+- `Pulumi.yaml`, `Pulumi.yml`, `Pulumi.<stack>.yaml` and `Pulumi.<stack>.yml` project and stack configs (runtime, backend, `encryptionsalt`, `secretsprovider`, `config:` namespaces and `secure:` values).
 - `cdk.json` and `cdk.context.json` app commands, watch globs, `@aws-cdk/*` feature flags and account/region context entries.
 - `*.template.json` synthesized AWS CDK CloudFormation templates (resources, IAM roles, security groups, parameters and outputs).
 - Any matching file via the Command Palette or Explorer context menu (Open in Pulumi & AWS CDK Config Viewer).
