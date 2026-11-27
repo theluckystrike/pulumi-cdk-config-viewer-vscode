@@ -1,0 +1,15 @@
+encryptionsalt: v1:q8sL4K2m9pE=:v1:9xR7vT2nW5kM3pQ1:ExampleSaltValue==
+secretsprovider: awskms://alias/pulumi-prod-key?region=us-east-1
+config:
+  aws:region: us-east-1
+  aws:defaultTags:
+    tags:
+      env: prod
+      owner: platform
+  app:replicas: "4"
+  app:instanceType: m6i.large
+  app:stripeApiKey:
+    secure: AAABAC7x9p2mQ4vL8kR1nT5wY3zB6cF0dH2jK4mN8pQ==
+  app:dbPassword: plaintext-sample-only-change-me
+  app:redisHost: cache.internal.example
+  app:enableTracing: "true"

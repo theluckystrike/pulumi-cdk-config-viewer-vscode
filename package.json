@@ -1,0 +1,329 @@
+{
+  "name": "zovo-pulumi-cdk-config-viewer",
+  "displayName": "Pulumi & AWS CDK Config Viewer",
+  "description": "Inspect Pulumi.yaml, Pulumi stack configs, cdk.json, cdk.context.json and CDK CloudFormation templates offline in VS Code: stack summary, secret encryption check, IAM and feature-flag audit with zero cloud calls.",
+  "version": "0.1.0",
+  "publisher": "zovo",
+  "license": "MIT",
+  "icon": "icon.png",
+  "galleryBanner": {
+    "color": "#0F172A",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theluckystrike/pulumi-cdk-config-viewer-vscode"
+  },
+  "bugs": {
+    "url": "https://github.com/theluckystrike/pulumi-cdk-config-viewer-vscode/issues"
+  },
+  "homepage": "https://github.com/theluckystrike/pulumi-cdk-config-viewer-vscode#readme",
+  "engines": {
+    "vscode": "^1.75.0"
+  },
+  "categories": [
+    "Other",
+    "Visualization"
+  ],
+  "keywords": [
+    "pulumi",
+    "aws-cdk",
+    "cdk",
+    "cloudformation",
+    "iac",
+    "devops",
+    "yaml",
+    "viewer"
+  ],
+  "main": "./src/extension.js",
+  "activationEvents": [
+    "onUri",
+    "onCustomEditor:zovo-pulumiview.viewer"
+  ],
+  "capabilities": {
+    "untrustedWorkspaces": {
+      "supported": true
+    },
+    "virtualWorkspaces": true
+  },
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "zovo-pulumiview.viewer",
+        "displayName": "Pulumi & AWS CDK Config Viewer",
+        "selector": [
+          {
+            "filenamePattern": "Pulumi.yaml"
+          },
+          {
+            "filenamePattern": "Pulumi.yml"
+          },
+          {
+            "filenamePattern": "Pulumi.*.yaml"
+          },
+          {
+            "filenamePattern": "Pulumi.*.yml"
+          },
+          {
+            "filenamePattern": "cdk.json"
+          },
+          {
+            "filenamePattern": "cdk.context.json"
+          },
+          {
+            "filenamePattern": "*.template.json"
+          }
+        ],
+        "priority": "default"
+      }
+    ],
+    "commands": [
+      {
+        "command": "zovoPulumiview.openWith",
+        "title": "Open in Pulumi & AWS CDK Config Viewer",
+        "category": "Pulumi & AWS CDK Config Viewer",
+        "icon": "$(layers)"
+      },
+      {
+        "command": "zovoPulumiview.openSample",
+        "title": "Open the Sample Pulumi Stack",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.openWalkthrough",
+        "title": "Get Started",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.moreViewers",
+        "title": "More free tools by Zovo",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.supportDeveloper",
+        "title": "Support the developer",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.auditIacConfig",
+        "title": "Audit Pulumi & CDK config security (Pro, 1 free try)",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.diffIacConfigs",
+        "title": "Compare two Pulumi or CDK configs (Pro, 1 free try)",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.exportIacInventory",
+        "title": "Export IaC resource & config inventory (Pro, 1 free try)",
+        "category": "Pulumi & AWS CDK Config Viewer"
+      },
+      {
+        "command": "zovoPulumiview.zovoPro.auditIacConfig",
+        "title": "Zovo Pro: Audit Pulumi & CDK config security"
+      },
+      {
+        "command": "zovoPulumiview.zovoPro.diffIacConfigs",
+        "title": "Zovo Pro: Compare two Pulumi or CDK configs"
+      },
+      {
+        "command": "zovoPulumiview.zovoPro.exportIacInventory",
+        "title": "Zovo Pro: Export IaC resource & config inventory"
+      },
+      {
+        "command": "zovoPulumiview.zovoTitle.auditIacConfig",
+        "title": "Zovo Pro: Audit Pulumi & CDK config security"
+      },
+      {
+        "command": "zovoPulumiview.zovoTitle.diffIacConfigs",
+        "title": "Zovo Pro: Compare two Pulumi or CDK configs"
+      },
+      {
+        "command": "zovoPulumiview.zovoTitle.exportIacInventory",
+        "title": "Zovo Pro: Export IaC resource & config inventory"
+      },
+      {
+        "command": "zovoPulumiview.getPro",
+        "title": "Get Zovo Pro (USD 19 once, all Zovo extensions)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoPulumiview.payWithPayPal",
+        "title": "Pay for Zovo Pro with PayPal (USD 19, team of 5 USD 59)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoPulumiview.unlockWithSponsors",
+        "title": "I already paid: activate with GitHub Sponsors",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoPulumiview.enterLicenseKey",
+        "title": "Enter Zovo Pro license key",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoPulumiview.removeLicense",
+        "title": "Remove Zovo Pro from this editor",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoPulumiview.payByCard",
+        "title": "Pay for Zovo Pro by card (USD 19)",
+        "category": "Zovo Pro"
+      },
+      {
+        "command": "zovoPulumiview.enterKey",
+        "title": "Enter a key",
+        "category": "Zovo Pro"
+      }
+    ],
+    "menus": {
+      "editor/title": [
+        {
+          "command": "zovoPulumiview.zovoTitle.auditIacConfig",
+          "when": "activeCustomEditorId == 'zovo-pulumiview.viewer' && config.zovoPulumiview.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "zovoPulumiview.zovoTitle.diffIacConfigs",
+          "when": "activeCustomEditorId == 'zovo-pulumiview.viewer' && config.zovoPulumiview.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "zovoPulumiview.zovoTitle.exportIacInventory",
+          "when": "activeCustomEditorId == 'zovo-pulumiview.viewer' && config.zovoPulumiview.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "zovoPulumiview.openWith",
+          "when": "resourceFilename =~ /^(Pulumi(\\.[^.]+)?\\.ya?ml|cdk(\\.context)?\\.json|.+\\.template\\.json)$/i && !explorerResourceIsFolder",
+          "group": "navigation@9"
+        },
+        {
+          "command": "zovoPulumiview.zovoPro.auditIacConfig",
+          "when": "resourceFilename =~ /^(Pulumi(\\.[^.]+)?\\.ya?ml|cdk(\\.context)?\\.json|.+\\.template\\.json)$/i && !explorerResourceIsFolder && config.zovoPulumiview.showProTools",
+          "group": "zovoPro@1"
+        },
+        {
+          "command": "zovoPulumiview.zovoPro.diffIacConfigs",
+          "when": "resourceFilename =~ /^(Pulumi(\\.[^.]+)?\\.ya?ml|cdk(\\.context)?\\.json|.+\\.template\\.json)$/i && !explorerResourceIsFolder && config.zovoPulumiview.showProTools",
+          "group": "zovoPro@2"
+        },
+        {
+          "command": "zovoPulumiview.zovoPro.exportIacInventory",
+          "when": "resourceFilename =~ /^(Pulumi(\\.[^.]+)?\\.ya?ml|cdk(\\.context)?\\.json|.+\\.template\\.json)$/i && !explorerResourceIsFolder && config.zovoPulumiview.showProTools",
+          "group": "zovoPro@3"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "zovoPulumiview.auditIacConfig",
+          "when": "config.zovoPulumiview.showProTools"
+        },
+        {
+          "command": "zovoPulumiview.diffIacConfigs",
+          "when": "config.zovoPulumiview.showProTools"
+        },
+        {
+          "command": "zovoPulumiview.exportIacInventory",
+          "when": "config.zovoPulumiview.showProTools"
+        },
+        {
+          "command": "zovoPulumiview.zovoPro.auditIacConfig",
+          "when": "false"
+        },
+        {
+          "command": "zovoPulumiview.zovoPro.diffIacConfigs",
+          "when": "false"
+        },
+        {
+          "command": "zovoPulumiview.zovoPro.exportIacInventory",
+          "when": "false"
+        },
+        {
+          "command": "zovoPulumiview.zovoTitle.auditIacConfig",
+          "when": "false"
+        },
+        {
+          "command": "zovoPulumiview.zovoTitle.diffIacConfigs",
+          "when": "false"
+        },
+        {
+          "command": "zovoPulumiview.zovoTitle.exportIacInventory",
+          "when": "false"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Pulumi & AWS CDK Config Viewer",
+      "properties": {
+        "zovoPulumiview.maxFileMB": {
+          "type": "number",
+          "default": 16,
+          "minimum": 1,
+          "maximum": 128,
+          "description": "Pulumi and CDK config files up to this size open in Pulumi & AWS CDK Config Viewer."
+        },
+        "zovoPulumiview.pageSize": {
+          "type": "number",
+          "default": 100,
+          "minimum": 20,
+          "maximum": 500,
+          "description": "Parsed config keys, flags and resources shown on one page."
+        },
+        "zovoPulumiview.showProTools": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the Zovo Pro tools (security audit, config diff and resource inventory export) in the Command Palette, the Explorer menu, the editor title menu and the viewer toolbar. Everything free stays visible."
+        },
+        "zovoPulumiview.askForRating": {
+          "type": "boolean",
+          "default": true,
+          "description": "Ask once for a store rating after 3 IaC configs open without an error across 2 days. Choosing No thanks never asks again. Nothing is sent anywhere."
+        },
+        "zovoPulumiview.showSupportLinks": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the small Rate, More free tools and Zovo Pro links at the bottom of the viewer. Nothing is sent anywhere."
+        },
+        "zovo.pulumiview.trial.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show the 7-day Zovo Pro trial button in the Pro panel."
+        }
+      }
+    },
+    "walkthroughs": [
+      {
+        "id": "zovoPulumiview.start",
+        "title": "Get started with Pulumi & AWS CDK Config Viewer",
+        "description": "Inspect Pulumi.yaml, Pulumi stack configs, cdk.json, cdk.context.json and CDK CloudFormation templates offline in VS Code.",
+        "steps": [
+          {
+            "id": "open",
+            "title": "Open a Pulumi or AWS CDK config",
+            "description": "Click any Pulumi.yaml, Pulumi stack YAML, cdk.json, cdk.context.json or CDK template file in the Explorer, or run Open in Pulumi & AWS CDK Config Viewer.\n[Open the sample Pulumi stack](command:zovoPulumiview.openSample)",
+            "media": {
+              "image": "images/screenshot.png",
+              "altText": "A Pulumi stack config open in the viewer showing stack settings, encrypted versus plaintext secrets, feature flags and static security findings."
+            },
+            "completionEvents": [
+              "onCommand:zovoPulumiview.openSample"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node scripts/test.js",
+    "package": "npx -y @vscode/vsce@3 package --no-dependencies"
+  },
+  "sponsor": {
+    "url": "https://github.com/sponsors/theluckystrike/sponsorships?tier_id=679878"
+  }
+}

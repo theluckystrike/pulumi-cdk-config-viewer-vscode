@@ -1,0 +1,25 @@
+{
+  "app": "npx ts-node --prefer-ts-exts bin/infra.ts",
+  "output": "cdk.out",
+  "watch": {
+    "include": ["**"],
+    "exclude": ["README.md", "cdk*.json", "dist", "node_modules"]
+  },
+  "context": {
+    "@aws-cdk/aws-lambda:recognizeLayerVersion": true,
+    "@aws-cdk/aws-iam:minimizePolicies": false,
+    "@aws-cdk/aws-s3:createDefaultLoggingPolicy": true,
+    "@aws-cdk/aws-efs:denyAnonymousAccess": true,
+    "@aws-cdk/core:checkSecretUsage": true,
+    "availability-zones:account=123456789012:region=us-east-1": [
+      "us-east-1a",
+      "us-east-1b",
+      "us-east-1c"
+    ],
+    "vpc-provider:account=123456789012:filter.isDefault=true:region=us-east-1": {
+      "vpcId": "vpc-0a1b2c3d4e5f67890",
+      "subnetGroups": ["Public", "Private"]
+    },
+    "environment": "production"
+  }
+}
